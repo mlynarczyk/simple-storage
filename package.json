@@ -1,20 +1,41 @@
 {
-  "name": "simple-storage",
+  "name": "@mlynarczyk/simple-storage",
   "version": "0.0.1",
-  "description": "Small wrapper for the local storage API.",
-  "main": "index.js",
+  "description": "Simple wrapper for the local storage API.",
+  "main": "dist/LocalStorage.js",
+  "types" : "dist/LocalStorage.d.ts",
   "scripts": {
     "preinstall": "node -e 'if(!/yarn\\.js$/.test(process.env.npm_execpath))throw new Error(\"This project uses Yarn.\")'",
     "test": "jest",
     "lint": "eslint . --cache --ext js,ts,ts,tsx",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "build": "tsc",
+    "prepare":"yarn build",
+    "prepublishOnly" : "yarn test && yarn run lint && yarn run tsc --noEmit",
+    "postversion": "git push && git push --tags"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@babel/core": "7.6.4"
+  "repository": {
+    "type": "git",
+    "url":"git+https@github.com:mlynarczyk/simple-storage.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node_modules/.bin/lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,md}": [
+      "prettier --config .prettierrc -l"
+    ],
+    "**/*.{js,ts}": [
+      "eslint"
+    ]
   },
   "devDependencies": {
+    "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.3",
     "@babel/preset-typescript": "7.6.0",
     "@commitlint/cli": "8.2.0",
@@ -30,19 +51,5 @@
     "lint-staged": "10.0.0-1",
     "prettier": "1.18.2",
     "typescript": "3.6.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "node_modules/.bin/lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "**/*.{js,ts,md}": [
-      "prettier --config .prettierrc -l"
-    ],
-    "**/*.{js,ts}": [
-      "eslint"
-    ]
   }
 }
