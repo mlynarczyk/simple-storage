@@ -1,0 +1,22 @@
+{
+  "name": "simple-storage",
+  "version": "0.0.1",
+  "description": "Small wrapper for local storage API.",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "node -e 'if(!/yarn\\.js$/.test(process.env.npm_execpath))throw new Error(\"This project uses Yarn.\")'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
+    "husky": "3.0.9"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
