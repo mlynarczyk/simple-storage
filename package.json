@@ -5,7 +5,6 @@
   "main": "dist/LocalStorage.js",
   "types" : "dist/LocalStorage.d.ts",
   "scripts": {
-    "preinstall": "node -e 'if(!/yarn\\.js$/.test(process.env.npm_execpath))throw new Error(\"This project uses Yarn.\")'",
     "test": "jest",
     "lint": "eslint . --cache --ext js,ts,ts,tsx",
     "tsc": "tsc --noEmit",
