@@ -1,23 +1,23 @@
 {
   "name": "@mlynarczyk/simple-storage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple wrapper for the local storage API.",
   "main": "dist/LocalStorage.js",
-  "types" : "dist/LocalStorage.d.ts",
+  "types": "dist/LocalStorage.d.ts",
   "scripts": {
     "test": "jest",
     "lint": "eslint . --cache --ext js,ts,ts,tsx",
     "tsc": "tsc --noEmit",
     "build": "tsc",
-    "prepare":"yarn build",
-    "prepublishOnly" : "yarn test && yarn run lint && yarn run tsc --noEmit",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn run lint && yarn run tsc --noEmit",
     "postversion": "git push && git push --tags"
   },
   "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url":"git+https@github.com:mlynarczyk/simple-storage.git"
+    "url": "git+https@github.com:mlynarczyk/simple-storage.git"
   },
   "husky": {
     "hooks": {
