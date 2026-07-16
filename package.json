@@ -1,6 +1,6 @@
 {
   "name": "@mlynarczyk/simple-storage",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple wrapper for the local storage API.",
   "main": "dist/LocalStorage.js",
   "types": "dist/LocalStorage.d.ts",
