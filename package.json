@@ -17,7 +17,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https@github.com:mlynarczyk/simple-storage.git"
+    "url": "git+ssh://git@github.com/mlynarczyk/simple-storage.git"
   },
   "husky": {
     "hooks": {
