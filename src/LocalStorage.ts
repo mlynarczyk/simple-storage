@@ -1,4 +1,8 @@
 const isLocalStorageAvailable = (() => {
+  // Never touch localStorage during SSR — in Node 26+ merely accessing the
+  // global emits an ExperimentalWarning per process.
+  if (typeof window === 'undefined') return false;
+
   const test = 'testIfLocalStorageIsAvailable';
 
   try {
